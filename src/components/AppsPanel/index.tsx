@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import { TabSelector } from "../TabSelector";
 import {TabSelectorEntry} from "../TabSelectorEntry";
+import { PanelBox } from "./style";
+import {MyAppsPanel} from "../MyAppsPanel";
+import {PublicAppsPanel} from "../PublicAppsPanel";
 
 export const AppsPanel: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState('first')
@@ -26,13 +29,9 @@ export const AppsPanel: React.FC = () => {
         </TabSelectorEntry>
       </TabSelector>
 
-      <div className="panelContainer">
-        My Apps PanelContainer
-      </div>
-
-      <div className="PanelContainer">
-        Public Apps PanelContainer
-      </div>
+      <PanelBox>
+        { activeIndex === 'first' ? <MyAppsPanel /> : <PublicAppsPanel /> }
+      </PanelBox>
     </>
   );
 }
