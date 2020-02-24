@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import {Layout} from './index';
 
 
@@ -19,10 +19,41 @@ const Editor: React.FC = () => {
   )
 }
 
-test('renders learn react link', () => {
-  const { getByText } = render(<Layout panel={<Panel />} editor={<Editor />}/>);
-  const linkElement = getByText(/Editor/i);
-  expect(linkElement).toBeInTheDocument();
-  const linkElement2 = getByText(/panel/);
-  expect(linkElement2).toBeInTheDocument();
+test('renders 2 columns with a resize handle', () => {
+  const { getByRole } = render(<Layout width={1000} panel={<Panel />} editor={<Editor />}/>);
+  const handle = getByRole('handle', { exact: true});
+  expect(handle).toBeInTheDocument();
+
+  const panel = getByRole('panel', { exact: true });
+  expect(panel).toBeInTheDocument();
+
+  const editor = getByRole('editor', { exact: true });
+  expect(editor).toBeInTheDocument();
+});
+
+test('renders 200 width of panel', () => {
+  const { getByRole } = render(<Layout width={1000} panel={<Panel />} editor={<Editor />}/>);
+  const handle = getByRole('handle', { exact: true});
+  fireEvent.mouseDown(handle)
+  fireEvent.mouseMove(handle, {clientX: 100})
+  fireEvent.mouseUp(handle)
+
+  const panel = getByRole('panel', { exact: true });
+  expect(panel.style.flexGrow).toBe("200")
+
+  const editor = getByRole('editor', { exact: true });
+  expect(editor.style.flexGrow).toBe("800")
+});
+
+test('renders 400 width of editor', () => {
+  const { getByRole } = render(<Layout width={1000} panel={<Panel />} editor={<Editor />}/>);
+  const handle = getByRole('handle', { exact: true});
+  fireEvent.mouseDown(handle)
+  fireEvent.mouseMove(handle, {clientX: 800})
+  fireEvent.mouseUp(handle)
+  const panel = getByRole('panel', { exact: true });
+  expect(panel.style.flexGrow).toBe("600")
+
+  const editor = getByRole('editor', { exact: true });
+  expect(editor.style.flexGrow).toBe("400")
 });

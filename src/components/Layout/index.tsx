@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import { Box, PanelColumn, EditorColumn, Handle } from "./style";
 
 type Props = {
+  width: number,
   panel: React.ReactNode,
   editor: React.ReactNode
 }
 
-export const Layout: React.FC<Props> = ({panel, editor}) => {
+export const Layout: React.FC<Props> = ({width, panel, editor}) => {
   const [treeSize, setTreeSize] = useState(1);
   const [tabsSize, setTabsSize] = useState(4);
   const [sidebarHidden] = useState(false)
@@ -16,7 +17,7 @@ export const Layout: React.FC<Props> = ({panel, editor}) => {
     // You can't make the left column narrower than 200px
     const leftMargin = 200;
     // And you can't make the right column narrower than 400px
-    const rightMargin = document.body.clientWidth - 400;
+    const rightMargin = width - 400;
     // So if you've reached the limit, stop updating the aspect ratio
     if (x < leftMargin) {
       return leftMargin;
@@ -31,23 +32,24 @@ export const Layout: React.FC<Props> = ({panel, editor}) => {
     const move = (e: MouseEvent) => {
       const x = calcHandlePosition(e)
       // Take the width of the window
-      const docWidth = document.body.clientWidth;
       // Set tree width to the given x
       setTreeSize(x);
       // And fill document area with the rest
-      setTabsSize(docWidth - x);
+      setTabsSize(width - x);
+    }
+    const up = () => {
+      document.removeEventListener('mousemove', move)
+      document.removeEventListener('mouseup', up)
     }
     document.addEventListener('mousemove', move)
-    document.addEventListener('mouseup', () => {
-      document.removeEventListener('mousemove', move)
-    })
+    document.addEventListener('mouseup', up)
   }
 
   return (
     <Box className="Layout">
-      <PanelColumn hidden={sidebarHidden} treeSize={treeSize}>{ panel }</PanelColumn>
-      <Handle hidden={sidebarHidden} onMouseDown={handleMouseDown} />
-      <EditorColumn tabsSize={tabsSize}>{ editor }</EditorColumn>
+      <PanelColumn role="panel" hidden={sidebarHidden} treeSize={treeSize}>{ panel }</PanelColumn>
+      <Handle role="handle" hidden={sidebarHidden} onMouseDown={handleMouseDown} />
+      <EditorColumn role="editor" tabsSize={tabsSize}>{ editor }</EditorColumn>
     </Box>
   );
 }

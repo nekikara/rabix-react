@@ -21,7 +21,8 @@ const Editor: React.FC = () => {
 function App() {
   return (
     <div className="App">
-      <Layout panel={<Panel />}
+      <Layout width={document.body.clientWidth}
+              panel={<Panel />}
               editor={ <Editor /> }
       />
     </div>
