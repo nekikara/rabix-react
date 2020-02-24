@@ -1,14 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Layout } from "./components/Layout";
-
-const Panel: React.FC = () => {
-  return (
-    <div>
-      Panel
-    </div>
-  )
-}
+import { Panel } from "./components/Panel";
 
 const Editor: React.FC = () => {
   return (

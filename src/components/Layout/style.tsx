@@ -1,10 +1,18 @@
 import styled from 'styled-components'
+import {
+  black,
+  layoutSectionBorderLight,
+  panelResizeHandleWidth,
+  sidebarPanelBg,
+  layoutTitleBarHeight,
+  p1
+} from "../../styles/variables";
 
 export const Box = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1 0 0;
-  border-bottom: $layout-section-border-light;
+  border-bottom: ${layoutSectionBorderLight};
 `;
 
 type PanelColumnProps = {
@@ -31,21 +39,15 @@ export const EditorColumn = styled.div.attrs((props: EditorColumnProps) => ({
   }
 }))<EditorColumnProps>``;
 
-const black = '#232323';
-const handleWidth = '6px';
-const sidebarPanelBg = '#3c3c3c';
-const layoutSectionBorderLight = '1px solid #232323';
-const layoutTitleBarHeight = '36px';
-
 
 type HandleProps = {
   hidden: boolean;
 }
 export const Handle = styled.div<HandleProps>`
-  background: ${sidebarPanelBg};
+  background-color: ${sidebarPanelBg};
   cursor: col-resize;
   display: inline-block;
-  width: ${handleWidth};
+  width: ${panelResizeHandleWidth};
   border-right: ${layoutSectionBorderLight};
 
   &:before {
@@ -53,8 +55,9 @@ export const Handle = styled.div<HandleProps>`
     display: block;
     position: relative;
     background-color: ${black};
-    width: ${props => props.hidden ? '1px' : handleWidth};
+    width: ${props => props.hidden ? '1px' : panelResizeHandleWidth};
     height: ${layoutTitleBarHeight};
+    padding: ${p1} 0;
   }
 `
 
