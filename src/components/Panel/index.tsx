@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {black, layoutSectionFontColor, layoutTitleBarHeight, p1, sidebarPanelBg} from "../../styles/variables";
+import {AppsPanel} from "../AppsPanel";
 
 const LogoBox = styled.div`
   background-color: ${black};
@@ -10,9 +11,19 @@ const LogoBox = styled.div`
   padding: ${p1};
 `
 
-const AppsPanelBox = styled.div`
+const AppsPanelSuperBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   color: ${layoutSectionFontColor};
-  background: ${sidebarPanelBg}
+  background-color: ${sidebarPanelBg}
+`
+const AppsPanelBox = styled.section`
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: ${sidebarPanelBg};
 `
 
 export const Panel: React.FC = () => {
@@ -21,9 +32,11 @@ export const Panel: React.FC = () => {
       <LogoBox>
         <span>Logo</span>
       </LogoBox>
-      <AppsPanelBox>
-        <span>container</span>
-      </AppsPanelBox>
+      <AppsPanelSuperBox>
+        <AppsPanelBox>
+          <AppsPanel />
+        </AppsPanelBox>
+      </AppsPanelSuperBox>
     </>
   );
 }

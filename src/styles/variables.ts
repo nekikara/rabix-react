@@ -42,7 +42,7 @@ export const brandDangerInverseColor = white;
 //
 // # Brand Colors
 // $brand-success: #5ca711;
-// $brand-primary: $sky;
+export const brandPrimary = sky;
 // $brand-danger: $red;
 // $brand-warning: $orange;
 // $brand-info: $sky;
@@ -165,8 +165,8 @@ export const layoutTitleBarHeight = '36px';
 //
 // $layout-status-bar-height: 32px;
 //
-// $layout-text-color: $smoke;
-// $layout-text-color-faded: $light-gray;
+export const layoutTextColor = smoke;
+export const layoutTextColorFaded = lightGray;
 
 // Typography
 // $font-family-title: "Montserrat";
