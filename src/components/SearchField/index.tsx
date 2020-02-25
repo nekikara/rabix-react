@@ -1,17 +1,24 @@
-import React from 'react';
+import React, {ChangeEvent, useState} from 'react';
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { SearchFieldBox, Icon, InputBox, Input } from "./style";
 
 export const SearchField: React.FC = () => {
+  const placeholder = "Search..."
+  const [searchWord, setSearchWord] = useState("")
+  const handleSearchWord = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchWord(e.target.value)
+  }
+
   return (
-    <>
-      <div className="form-group m-0">
-        <i className="icon fa fa-fw fa-search" />
-        <input className="form-control"
-               data-test="search-field"
-               placeholder="placeholder"
-               value="value"
-               onChange={(e) => console.log('keyUp', e)}
+    <SearchFieldBox>
+      <Icon   icon={faSearch} fixedWidth />
+      <InputBox>
+        <Input className="form-control"
+               placeholder={placeholder}
+               value={searchWord}
+               onChange={handleSearchWord}
         />
-      </div>
-    </>
+      </InputBox>
+    </SearchFieldBox>
   );
 }
