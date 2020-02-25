@@ -1,9 +1,10 @@
 import React from 'react';
+import {SearchField} from "../SearchField";
 
 export const MyAppsPanel: React.FC = () => {
   return (
     <>
-      <div>search field</div>
+      <SearchField />
       <div>
         <button>Open a Project</button>
         <button>refresh</button>
