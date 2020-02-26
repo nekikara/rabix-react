@@ -11,7 +11,7 @@ export const SearchField: React.FC = () => {
 
   return (
     <SearchFieldBox>
-      <Icon   icon={faSearch} fixedWidth />
+      <Icon icon={faSearch} fixedWidth />
       <InputBox>
         <Input className="form-control"
                placeholder={placeholder}

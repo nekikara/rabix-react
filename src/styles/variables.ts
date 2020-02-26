@@ -69,6 +69,7 @@ export const brandPrimary = sky;
 
 // ----- Forms -----
 // $input-bg: #333333;
+export const inputBtnBorderWidth = '1px';
 // $input-border-color: #3a3a3a;
 // $input-bg-focus: $input-bg;
 // $input-color-focus: $text-color;
