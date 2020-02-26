@@ -1,8 +1,5 @@
-import React from 'react';
 import styled from "styled-components";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {brandPrimary, inputBtnBorderWidth, layoutSectionBackground, layoutTextColor} from "../../../styles/variables";
-import {faPlus, faSyncAlt} from "@fortawesome/free-solid-svg-icons";
 
 export const NewProjectBox = styled.div`
   width: 100%;
