@@ -7,6 +7,7 @@ import {faSearch} from "@fortawesome/free-solid-svg-icons";
 import {layoutTextColorFaded} from "../../styles/variables";
 import styled from "styled-components";
 import {NavSearchResult} from "../NavSearchResult";
+import {LineLoader} from "../LineLoader";
 
 const NoSearchResultBox = styled.div`
   text-align: center;
@@ -15,25 +16,27 @@ const NoSearchResultBox = styled.div`
 
 export const MyAppsPanel: React.FC = () => {
   const [searchContent] = useState({value: false})
-  const [searchResults] = useState([{title: 'test1', label: 'label1'}])
+  const [searchResults] = useState([{id: 1, title: 'test1', label: 'label1'}])
   return (
     <>
       <SearchField />
       <NewProjectSection />
       <ScrollBox>
-        <div>
+        <div className="NavSearchResultBox">
           { searchResults.length > 0 ?
             searchResults.map(r => {
               return (
-                <NavSearchResult title={r.title} label={r.label}/>
+                <NavSearchResult key={r.id} title={r.title} label={r.label} />
               )
             })
             : "empty"
           }
         </div>
-        <div>
-          { searchContent.value && searchResults.entries.length < 1 ? 'ct-line-loader' : 'empty'}
+
+        <div className="LineLoaderBox">
+          <LineLoader />
         </div>
+
         <NoSearchResultBox>
           <p>No search results for "{`hogeohge`}"</p>
           <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
