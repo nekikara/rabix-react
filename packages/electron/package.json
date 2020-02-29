@@ -1,0 +1,15 @@
+{
+  "name": "rabix-electron",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "compile:electron": "tsc -w",
+    "start:electron": "electron ./dist/main.js"
+  },
+  "dependencies": {
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "electron": "^8.0.2"
+  }
+}
