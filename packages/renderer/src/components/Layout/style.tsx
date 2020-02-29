@@ -24,7 +24,7 @@ export const PanelColumn = styled.div.attrs((props: PanelColumnProps) => ({
     flexGrow: props.treeSize
   }
 }))<PanelColumnProps>`
-  display: ${props => props.hidden ? 'none' : 'flex'};
+  display: ${(props: PanelColumnProps) => props.hidden ? 'none' : 'flex'};
   flex: 1 0 0;
   flex-direction: column;
   min-width:0; // Chromium hack, otherwise wide nodes would push the column width
@@ -55,7 +55,7 @@ export const Handle = styled.div<HandleProps>`
     display: block;
     position: relative;
     background-color: ${black};
-    width: ${props => props.hidden ? '1px' : panelResizeHandleWidth};
+    width: ${(props: HandleProps) => props.hidden ? '1px' : panelResizeHandleWidth};
     height: ${layoutTitleBarHeight};
     padding: ${p1} 0;
   }

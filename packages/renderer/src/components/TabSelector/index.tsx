@@ -25,7 +25,7 @@ const Highlight = styled.div<HighLightProps>`
   transition: .2s all;
   height: 1px;
   width: 50%;
-  margin-left: ${props => props.activeIndex === 'second' ? '50%' : '0%'};
+  margin-left: ${(props: HighLightProps) => props.activeIndex === 'second' ? '50%' : '0%'};
   background-color: ${brandPrimary};
 `;
 

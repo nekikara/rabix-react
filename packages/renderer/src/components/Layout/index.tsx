@@ -12,7 +12,7 @@ export const Layout: React.FC<Props> = ({width, panel, editor}) => {
   const [tabsSize, setTabsSize] = useState(4);
   const [sidebarHidden] = useState(false)
 
-  const calcHandlePosition = (e: MouseEvent) => {
+  const calcHandlePosition = (e: React.MouseEvent) => {
     const x = e.clientX;
     // You can't make the left column narrower than 200px
     const leftMargin = 200;
@@ -38,10 +38,14 @@ export const Layout: React.FC<Props> = ({width, panel, editor}) => {
       setTabsSize(width - x);
     }
     const up = () => {
+      // @ts-ignore
       document.removeEventListener('mousemove', move)
+      // @ts-ignore
       document.removeEventListener('mouseup', up)
     }
+    // @ts-ignore
     document.addEventListener('mousemove', move)
+    // @ts-ignore
     document.addEventListener('mouseup', up)
   }
 

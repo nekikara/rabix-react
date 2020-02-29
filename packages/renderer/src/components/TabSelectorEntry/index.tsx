@@ -12,8 +12,8 @@ const TabBox = styled.div<TabBoxProps>`
   text-align: center;
   line-height: ${actionBarHeight};
   background: none;
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
-  color: ${props => props.active ? layoutTextColor : layoutTextColorFaded};
+  cursor: ${(props: TabBoxProps) => props.disabled ? 'not-allowed' : 'pointer'};
+  color: ${(props: TabBoxProps) => props.active ? layoutTextColor : layoutTextColorFaded};
   position: relative;
 `;
 
