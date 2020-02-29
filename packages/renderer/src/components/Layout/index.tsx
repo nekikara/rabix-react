@@ -29,7 +29,7 @@ export const Layout: React.FC<Props> = ({width, panel, editor}) => {
   }
 
   const handleMouseDown = (e: React.MouseEvent) => {
-    const move = (e: MouseEvent) => {
+    const move = (e: React.MouseEvent) => {
       const x = calcHandlePosition(e)
       // Take the width of the window
       // Set tree width to the given x
