@@ -8,7 +8,7 @@ export const NewProjectSection: React.FC = () => {
     <NewProjectBox className="NewProjectBox">
       <AppSourcesBtn>
         <FontAwesomeIcon icon={faPlus} fixedWidth />
-        <Text> Open a Project </Text>
+        <Text>Open a Project</Text>
       </AppSourcesBtn>
       <SyncBtn>
         <FontAwesomeIcon icon={faSyncAlt} />
