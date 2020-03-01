@@ -1,21 +1,19 @@
-import React from 'react';
+import React from 'react'
 
 export const PublicAppsPanel: React.FC = () => {
   return (
     <>
       <div>Search Public Apps</div>
       <div>
-        <label>
-          Group by:
-        </label>
-        <button>Open a Project</button>
+        <span>Group by:</span>
+        <button type="button">Open a Project</button>
         <ul>
-          <li><span>caption</span></li>
+          <li>
+            <span>caption</span>
+          </li>
         </ul>
       </div>
-      <div className="scroll-container">
-        Public Apps Panel
-      </div>
+      <div className="scroll-container">Public Apps Panel</div>
     </>
-  );
+  )
 }

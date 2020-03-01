@@ -1,7 +1,7 @@
-import React from 'react';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faPlus, faSyncAlt} from "@fortawesome/free-solid-svg-icons";
-import {AppSourcesBtn, NewProjectBox, SyncBtn, Text} from "./style";
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faSyncAlt } from '@fortawesome/free-solid-svg-icons'
+import { AppSourcesBtn, NewProjectBox, SyncBtn, Text } from './style'
 
 export const NewProjectSection: React.FC = () => {
   return (
@@ -14,5 +14,5 @@ export const NewProjectSection: React.FC = () => {
         <FontAwesomeIcon icon={faSyncAlt} />
       </SyncBtn>
     </NewProjectBox>
-  );
+  )
 }

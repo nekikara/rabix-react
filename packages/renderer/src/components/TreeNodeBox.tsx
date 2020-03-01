@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import {layoutTextColor} from "../styles/variables";
+import React from 'react'
+import styled from 'styled-components'
+import { layoutTextColor } from '../styles/variables'
 
 const Box = styled.div`
   display: block;
@@ -8,19 +8,13 @@ const Box = styled.div`
 `
 
 type Props = {
-  node: any,
+  node: any
 }
-export const TreeNodeBox: React.FC<Props> = ({node}) => {
+export const TreeNodeBox: React.FC<Props> = ({ node }) => {
   return (
     <Box>
-      <div className="node">
-        {node.value}
-      </div>
-      <div className="children">
-        children
-      </div>
+      <div className="node">{node.value}</div>
+      <div className="children">children</div>
     </Box>
   )
-
 }
-

@@ -1,12 +1,12 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow } from 'electron'
 
-let win: BrowserWindow | null;
+let win: BrowserWindow | null
 
 function createWindow() {
-  win = new BrowserWindow({ width: 1400, height: 900});
-  win.loadURL("http://localhost:3000")
+  win = new BrowserWindow({ width: 1400, height: 900 })
+  win.loadURL('http://localhost:3000')
   win.on('closed', () => {
-    win = null;
+    win = null
   })
 }
 

@@ -1,40 +1,39 @@
 // Colors
-export const black = '#232323';
-export const darkGray = '#303030';
-export const gray = '#3c3c3c';
-export const lightGray = '#999';
-export const smoke = '#eee';
-export const white = '#fff';
-export const blue = '#337cb9';
-export const sky = '#6aaaf0';
-export const orange = '#dc8400';
-export const carrot = '#e29834';
-export const red = '#dd4a38';
-export const purple = '#a184dc';
-export const green = '#7ac24d';
+export const black = '#232323'
+export const darkGray = '#303030'
+export const gray = '#3c3c3c'
+export const lightGray = '#999'
+export const smoke = '#eee'
+export const white = '#fff'
+export const blue = '#337cb9'
+export const sky = '#6aaaf0'
+export const orange = '#dc8400'
+export const carrot = '#e29834'
+export const red = '#dd4a38'
+export const purple = '#a184dc'
+export const green = '#7ac24d'
 
 // Padding
-export const p1 = '.25rem';
+export const p1 = '.25rem'
 
 // Layout
-export const layoutStripeWidth = '28px';
-export const layoutSectionBackground = '#333';
-export const layoutSectionTerminalBackground = '#1f1f1f';
-export const layoutSectionBorderDark = '1px solid #1a1a1a';
-export const layoutSectionBorderLight = '1px solid #232323';
-export const layoutSectionFontColor = '#f3f3f3';
-export const layoutSectionAltBorderColor = '#ccc';
+export const layoutStripeWidth = '28px'
+export const layoutSectionBackground = '#333'
+export const layoutSectionTerminalBackground = '#1f1f1f'
+export const layoutSectionBorderDark = '1px solid #1a1a1a'
+export const layoutSectionBorderLight = '1px solid #232323'
+export const layoutSectionFontColor = '#f3f3f3'
+export const layoutSectionAltBorderColor = '#ccc'
 
 // Layout Uniques
-export const mainHeaderHeight = '35px'; // Logo/tabs row
-export const panelResizeHandleWidth = '6px'; // drag handle for resizing nav tree
+export const mainHeaderHeight = '35px' // Logo/tabs row
+export const panelResizeHandleWidth = '6px' // drag handle for resizing nav tree
 
 // Editors common
-export const actionBarHeight = '36px';
-export const actionBarColor = white;
-export const sidebarPanelBg = gray;
-export const brandDangerInverseColor = white;
-
+export const actionBarHeight = '36px'
+export const actionBarColor = white
+export const sidebarPanelBg = gray
+export const brandDangerInverseColor = white
 
 //
 //
@@ -42,7 +41,7 @@ export const brandDangerInverseColor = white;
 //
 // # Brand Colors
 // $brand-success: #5ca711;
-export const brandPrimary = sky;
+export const brandPrimary = sky
 // $brand-danger: $red;
 // $brand-warning: $orange;
 // $brand-info: $sky;
@@ -69,7 +68,7 @@ export const brandPrimary = sky;
 
 // ----- Forms -----
 // $input-bg: #333333;
-export const inputBtnBorderWidth = '1px';
+export const inputBtnBorderWidth = '1px'
 // $input-border-color: #3a3a3a;
 // $input-bg-focus: $input-bg;
 // $input-color-focus: $text-color;
@@ -153,8 +152,8 @@ export const inputBtnBorderWidth = '1px';
 // $action-bar-border-color: $layout-section-alt-border-color;
 // $action-bar-background: white; // @TODO Fix theme variable, bottom of tab value
 
-//$layout-title-bar-background: #1f1f1f;
-export const layoutTitleBarHeight = '36px';
+// $layout-title-bar-background: #1f1f1f;
+export const layoutTitleBarHeight = '36px'
 
 // $layout-tab-height: 32px; // @fixme unused?
 // $layout-tab-background-idle: #5c5f64; // @fixme unused?
@@ -166,8 +165,8 @@ export const layoutTitleBarHeight = '36px';
 //
 // $layout-status-bar-height: 32px;
 //
-export const layoutTextColor = smoke;
-export const layoutTextColorFaded = lightGray;
+export const layoutTextColor = smoke
+export const layoutTextColorFaded = lightGray
 
 // Typography
 // $font-family-title: "Montserrat";

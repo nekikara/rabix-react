@@ -7,11 +7,13 @@
     "electron:run": "nodemon --watch dist --exec electron ./dist/main.js",
     "start": "concurrently \"npm:electron:*\""
   },
+  "dependencies": {
+    "electron": "^8.0.2"
+  },
   "devDependencies": {
     "typescript": "^3.8.3",
     "@types/node": "^12.0.0",
     "concurrently": "^5.1.0",
-    "electron": "^8.0.2",
     "nodemon": "^2.0.2"
   }
 }

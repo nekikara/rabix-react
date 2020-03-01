@@ -1,10 +1,14 @@
-import React from 'react';
-import styled from "styled-components";
-import {actionBarHeight, layoutTextColor, layoutTextColorFaded} from "../../styles/variables";
+import React from 'react'
+import styled from 'styled-components'
+import {
+  actionBarHeight,
+  layoutTextColor,
+  layoutTextColorFaded
+} from '../../styles/variables'
 
 type TabBoxProps = {
-  active: boolean,
-  disabled: boolean,
+  active: boolean
+  disabled: boolean
 }
 const TabBox = styled.div<TabBoxProps>`
   display: inline-block;
@@ -12,22 +16,29 @@ const TabBox = styled.div<TabBoxProps>`
   text-align: center;
   line-height: ${actionBarHeight};
   background: none;
-  cursor: ${(props: TabBoxProps) => props.disabled ? 'not-allowed' : 'pointer'};
-  color: ${(props: TabBoxProps) => props.active ? layoutTextColor : layoutTextColorFaded};
+  cursor: ${(props: TabBoxProps) =>
+    props.disabled ? 'not-allowed' : 'pointer'};
+  color: ${(props: TabBoxProps) =>
+    props.active ? layoutTextColor : layoutTextColorFaded};
   position: relative;
-`;
+`
 
 type Props = {
-  active: boolean,
-  disabled: boolean,
+  active: boolean
+  disabled: boolean
   onClick: (e: React.MouseEvent) => void
 }
-export const TabSelectorEntry: React.FC<Props> = ({active, disabled , onClick, children}) => {
+export const TabSelectorEntry: React.FC<Props> = ({
+  active,
+  disabled,
+  onClick,
+  children
+}) => {
   return (
     <>
       <TabBox active={active} disabled={disabled} onClick={onClick}>
         {children}
       </TabBox>
     </>
-  );
+  )
 }

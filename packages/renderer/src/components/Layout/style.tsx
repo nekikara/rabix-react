@@ -6,42 +6,41 @@ import {
   sidebarPanelBg,
   layoutTitleBarHeight,
   p1
-} from "../../styles/variables";
+} from '../../styles/variables'
 
 export const Box = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1 0 0;
   border-bottom: ${layoutSectionBorderLight};
-`;
+`
 
 type PanelColumnProps = {
-  treeSize: number;
-  hidden: boolean;
+  treeSize: number
+  hidden: boolean
 }
 export const PanelColumn = styled.div.attrs((props: PanelColumnProps) => ({
   style: {
     flexGrow: props.treeSize
   }
 }))<PanelColumnProps>`
-  display: ${(props: PanelColumnProps) => props.hidden ? 'none' : 'flex'};
+  display: ${(props: PanelColumnProps) => (props.hidden ? 'none' : 'flex')};
   flex: 1 0 0;
   flex-direction: column;
-  min-width:0; // Chromium hack, otherwise wide nodes would push the column width
-`;
+  min-width: 0; // Chromium hack, otherwise wide nodes would push the column width
+`
 
 type EditorColumnProps = {
-  tabsSize: number;
+  tabsSize: number
 }
 export const EditorColumn = styled.div.attrs((props: EditorColumnProps) => ({
   style: {
     flexGrow: props.tabsSize
   }
-}))<EditorColumnProps>``;
-
+}))<EditorColumnProps>``
 
 type HandleProps = {
-  hidden: boolean;
+  hidden: boolean
 }
 export const Handle = styled.div<HandleProps>`
   background-color: ${sidebarPanelBg};
@@ -55,9 +54,9 @@ export const Handle = styled.div<HandleProps>`
     display: block;
     position: relative;
     background-color: ${black};
-    width: ${(props: HandleProps) => props.hidden ? '1px' : panelResizeHandleWidth};
+    width: ${(props: HandleProps) =>
+      props.hidden ? '1px' : panelResizeHandleWidth};
     height: ${layoutTitleBarHeight};
     padding: ${p1} 0;
   }
 `
-

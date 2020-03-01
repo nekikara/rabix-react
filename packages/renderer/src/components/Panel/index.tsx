@@ -1,7 +1,13 @@
-import React from 'react';
-import styled from "styled-components";
-import {black, layoutSectionFontColor, layoutTitleBarHeight, p1, sidebarPanelBg} from "../../styles/variables";
-import {AppsPanel} from "../AppsPanel";
+import React from 'react'
+import styled from 'styled-components'
+import {
+  black,
+  layoutSectionFontColor,
+  layoutTitleBarHeight,
+  p1,
+  sidebarPanelBg
+} from '../../styles/variables'
+import { AppsPanel } from '../AppsPanel'
 
 const LogoBox = styled.div`
   background-color: ${black};
@@ -16,7 +22,7 @@ const AppsPanelSuperBox = styled.div`
   flex-direction: column;
   height: 100%;
   color: ${layoutSectionFontColor};
-  background-color: ${sidebarPanelBg}
+  background-color: ${sidebarPanelBg};
 `
 const AppsPanelBox = styled.section`
   flex: 1;
@@ -38,5 +44,5 @@ export const Panel: React.FC = () => {
         </AppsPanelBox>
       </AppsPanelSuperBox>
     </>
-  );
+  )
 }

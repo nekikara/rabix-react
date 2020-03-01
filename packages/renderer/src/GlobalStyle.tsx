@@ -1,8 +1,8 @@
-import  { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
-const textColor = '#eee';
-const bodyBg = '#303030';
-const fontSizeBase = '13px';
+const textColor = '#eee'
+const bodyBg = '#303030'
+const fontSizeBase = '13px'
 
 export const GlobalStyle = createGlobalStyle`
   html, body {
@@ -13,4 +13,3 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${fontSizeBase};
   }
 `
-

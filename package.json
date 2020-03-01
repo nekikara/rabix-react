@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "lerna run --parallel start",
-    "lint": "eslint 'packages/electron/**/*.ts' --fix"
+    "lint": "eslint -c .eslintrc.js --ext .ts,.tsx --fix packages/"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
@@ -13,21 +13,30 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.4.0",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "electron": "^8.0.2",
+    "@testing-library/jest-dom": "^4.2.4"
   },
   "devDependencies": {
-    "typescript": "^3.8.3",
-    "@types/styled-components": "^5.0.0",
-    "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
+    "@types/styled-components": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
     "concurrently": "^5.1.0",
-    "electron": "^8.0.2",
+    "eslint-config-airbnb-typescript": "^7.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "lerna": "^3.20.2",
     "nodemon": "^2.0.2",
-    "lerna": "^3.20.2"
+    "prettier": "^1.19.1",
+    "typescript": "^3.8.3"
   }
 }
