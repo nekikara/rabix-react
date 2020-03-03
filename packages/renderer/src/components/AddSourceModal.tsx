@@ -1,39 +1,16 @@
 import React from 'react'
-import { remote, OpenDialogOptions, OpenDialogReturnValue } from 'electron'
+// import { ipcRenderer } from 'electron'
 
-function openDialog(
-  options: Electron.OpenDialogOptions = {}
-): Promise<OpenDialogReturnValue> {
-  const { dialog, getCurrentWindow } = remote
-  const config = { ...options }
-
-  return dialog.showOpenDialog(getCurrentWindow(), config)
-}
-
-async function openFolderChoiceDialog(
-  options: OpenDialogOptions = {},
-  multi = false
-): Promise<string[]> {
-  const title = 'Choose a Directory'
-  // const properties = ['openDirectory', multi && 'multiSelections'].filter(
-  //   v => v
-  // )
-  console.log(multi)
-  const res = await openDialog({
-    ...options,
-    title,
-    properties: ['openDirectory']
-  })
-  return res.filePaths
-}
+process.once('loaded', () => {
+  console.log('hogehoge')
+})
 
 export const AddSourceModal: React.FC = () => {
-  const selectLocalHolder = async () => {
-    const paths = await openFolderChoiceDialog({
-      buttonLabel: 'Add to Workspace'
-    })
-    console.log(paths)
+  const selectLocalHolder = () => {
+    // ipcRenderer.send('select-dirs')
+    console.log('=========')
   }
+
   return (
     <>
       <div className="header">Local Platform</div>
