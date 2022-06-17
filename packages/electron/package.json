@@ -8,7 +8,7 @@
     "start": "concurrently \"npm:electron:*\""
   },
   "dependencies": {
-    "electron": "^8.0.2"
+    "electron": "^15.5.5"
   },
   "devDependencies": {
     "typescript": "^3.8.3",
